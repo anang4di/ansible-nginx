@@ -1,0 +1,15 @@
+- name: Stop Nginx
+  service:
+    name: nginx
+    state: stopped
+
+- name: Remove nginx package
+  apt:
+    name: nginx
+    state: absent
+    purge: yes
+
+- name: Remove nginx config directory
+  file:
+    path: /etc/nginx
+    state: absent

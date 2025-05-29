@@ -1,0 +1,21 @@
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+    update_cache: yes
+
+- name: Deploy Nginx config
+  template:
+    src: default.conf.j2
+    dest: /etc/nginx/sites-available/default
+  notify: Reload Nginx
+
+- name: Enable Nginx
+  systemd:
+    name: nginx
+    enabled: yes
+
+- name: Restart Nginx
+  service:
+    name: nginx
+    state: restarted

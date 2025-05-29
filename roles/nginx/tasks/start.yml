@@ -1,0 +1,9 @@
+- name: Enable Nginx on boot
+  systemd:
+    name: nginx
+    enabled: yes
+
+- name: Start or restart Nginx
+  service:
+    name: nginx
+    state: restarted
