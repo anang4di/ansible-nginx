@@ -1,0 +1,6 @@
+- name: Uninstall Nginx
+  hosts: webservers
+  become: true
+  roles:
+    - role: nginx
+      tasks_from: uninstall

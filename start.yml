@@ -1,0 +1,6 @@
+- name: Start Nginx
+  hosts: webservers
+  become: true
+  roles:
+    - role: nginx
+      tasks_from: start
