@@ -4,6 +4,16 @@
     state: present
     update_cache: yes
 
+- name: Remove default Nginx index file
+  file:
+    path: /var/www/html/index.nginx-debian.html
+    state: absent
+
+- name: Deploy custom index.html
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+
 - name: Deploy Nginx config
   template:
     src: default.conf.j2
