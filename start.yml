@@ -1,6 +1,8 @@
 - name: Start Nginx
   hosts: webservers
   become: true
-  roles:
-    - role: nginx
-      tasks_from: start
+  tasks:
+      - name: Run task start from nginx role
+        import_role:
+          name: nginx
+          tasks_from: start

@@ -1,6 +1,8 @@
 - name: Install and configure Nginx
   hosts: webservers
   become: true
-  roles:
-    - role: nginx
-      tasks_from: install
+  tasks:
+    - name: Run task install from nginx role
+      import_role:
+        name: nginx
+        tasks_from: install

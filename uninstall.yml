@@ -1,6 +1,8 @@
 - name: Uninstall Nginx
   hosts: webservers
   become: true
-  roles:
-    - role: nginx
-      tasks_from: uninstall
+  tasks:
+    - name: Run task uninstall from nginx role
+      import_role:
+        name: nginx
+        tasks_from: uninstall

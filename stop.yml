@@ -1,6 +1,8 @@
 - name: Stop Nginx
   hosts: webservers
   become: true
-  roles:
-    - role: nginx
-      tasks_from: stop
+  tasks:
+      - name: Run task stop from nginx role
+        import_role:
+          name: nginx
+          tasks_from: stop
