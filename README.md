@@ -5,14 +5,14 @@
 
 Repository ini menyediakan serangkaian playbook Ansible yang dirancang untuk mempermudah proses instalasi, konfigurasi, dan manajemen layanan NGINX pada server berbasis Linux Debian dan Ubuntu. Dengan pendekatan modular dan deklaratif, Anda dapat mengotomatisasi life cycle NGINX mulai dari instalasi hingga penghapusan.
 
-## Fitur Utama
+## Features
 
 - **Instalasi Otomatis**: Playbook `install.yml` untuk menginstal NGINX beserta dependensinya.
 - **Manajemen Layanan**: Playbook `start.yml` dan `stop.yml` untuk memulai dan menghentikan layanan NGINX.
 - **Penghapusan**: Playbook `uninstall.yml` untuk menghapus NGINX dari sistem.
 - **Struktur Modular**: Menggunakan struktur role Ansible yang memisahkan tugas, variabel, dan handler untuk kemudahan pemeliharaan.
 
-## Struktur Direktori
+## Project Structure
 ```
 ansible-nginx/
 ├── ansible.cfg
@@ -35,13 +35,13 @@ ansible-nginx/
 - `uninstall.yml`: Playbook untuk menghapus NGINX.
 - `roles/nginx/`: Direktori role Ansible untuk NGINX.
 
-## Prasyarat
+## Prerequisites
 
 - Ansible versi terbaru (disarankan menggunakan `pip install ansible`)
 - Akses SSH ke server target dengan hak akses sudo
 - Sistem operasi berbasis Linux (Debian/Ubuntu)
 
-## Cara Penggunaan
+## How to Use
 
 1. **Clone Repository**
 
